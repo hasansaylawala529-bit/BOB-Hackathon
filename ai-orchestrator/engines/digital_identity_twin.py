@@ -10,8 +10,17 @@ class DigitalIdentityTwin:
 
     def load_twins(self):
 
-        twin_path = Path(
-            "../databases/mongodb/digital_twins.json"
+        from pathlib import Path
+
+        current_file = Path(__file__).resolve()
+
+        project_root = current_file.parent.parent.parent
+
+        twin_path = (
+            project_root /
+            "databases" /
+            "mongodb" /
+            "digital_twins.json"
         )
 
         with open(twin_path, "r") as f:

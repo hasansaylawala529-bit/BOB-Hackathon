@@ -1,0 +1,82 @@
+{
+    "john_priv": {
+      "username": "john_priv",
+      "role": "PRIVILEGED",
+      "expected_hours": [9,10,11,12,13,14,15,16,17,18],
+      "expected_resources": [
+        "KYC Repository",
+        "Treasury Database",
+        "Loan Database"
+      ],
+      "typical_db_queries": [
+        "SELECT",
+        "JOIN",
+        "INSERT"
+      ],
+      "biometric_baseline": {
+        "keystroke_dwell_mean": 90,
+        "keystroke_flight_mean": 110,
+        "mouse_speed_mean": 250,
+        "scroll_speed_mean": 80
+      }
+    },
+  
+    "ameya_admin": {
+      "username": "ameya_admin",
+      "role": "ADMIN",
+      "expected_hours": [8,9,10,11,12,13,14,15,16,17,18,19,20],
+      "expected_resources": [
+        "SWIFT System",
+        "Treasury Database",
+        "KYC Repository"
+      ],
+      "typical_db_queries": [
+        "SELECT",
+        "UPDATE",
+        "CREATE",
+        "GRANT"
+      ],
+      "biometric_baseline": {
+        "keystroke_dwell_mean": 80,
+        "keystroke_flight_mean": 95,
+        "mouse_speed_mean": 310,
+        "scroll_speed_mean": 120
+      }
+    },
+  
+    "sarah_vendor": {
+      "username": "sarah_vendor",
+      "role": "VENDOR",
+      "expected_hours": [10,11,12,13,14,15],
+      "expected_resources": [
+        "Loan Database"
+      ],
+      "typical_db_queries": [
+        "SELECT"
+      ],
+      "biometric_baseline": {
+        "keystroke_dwell_mean": 130,
+        "keystroke_flight_mean": 180,
+        "mouse_speed_mean": 150,
+        "scroll_speed_mean": 50
+      }
+    },
+  
+    "jane_emp": {
+      "username": "jane_emp",
+      "role": "EMPLOYEE",
+      "expected_hours": [9,10,11,12,13,14,15,16,17],
+      "expected_resources": [
+        "Loan Database"
+      ],
+      "typical_db_queries": [
+        "SELECT"
+      ],
+      "biometric_baseline": {
+        "keystroke_dwell_mean": 100,
+        "keystroke_flight_mean": 120,
+        "mouse_speed_mean": 200,
+        "scroll_speed_mean": 90
+      }
+    }
+  }

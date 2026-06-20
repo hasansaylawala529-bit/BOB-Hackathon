@@ -6,7 +6,8 @@ class TrustScorer:
         context_score,
         privilege_score,
         attack_score,
-        trust_score
+        trust_score,
+        ticket_penalty
     ):
 
         final_risk = (
@@ -17,9 +18,11 @@ class TrustScorer:
 
             privilege_score * 0.25 +
 
-            attack_score * 0.15 +
+            attack_score * 0.15 + 
 
-            (100 - trust_score) * 0.15
+            (100 - trust_score) * 0.15 + 
+
+            ticket_penalty * 0.15 
         )
 
         final_risk = round(

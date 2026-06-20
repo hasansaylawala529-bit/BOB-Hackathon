@@ -1,26 +1,15 @@
-GRAPH = {
+import sys
+from pathlib import Path
 
-    "EMPLOYEE": [
-        "Loan Database"
-    ],
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 
-    "VENDOR": [
-        "Loan Database"
-    ],
+sys.path.append(
+    str(ROOT_DIR)
+)
 
-    "PRIVILEGED": [
-        "Loan Database",
-        "KYC Repository",
-        "Treasury Database"
-    ],
-
-    "ADMIN": [
-        "Loan Database",
-        "KYC Repository",
-        "Treasury Database",
-        "SWIFT System"
-    ]
-}
+from databases.neo4j.neo4j_service import (
+    get_reachable_resources
+)
 
 
 RESOURCE_IMPACT = {
@@ -39,10 +28,7 @@ class AttackPathAgent:
 
     def analyze(self, role):
 
-        resources = GRAPH.get(
-            role,
-            []
-        )
+        resources = get_reachable_resources( role )
 
         total_impact = 0
 
