@@ -8,7 +8,7 @@ const cors = require('cors');
 const http = require('http');
 const { WebSocketServer } = require('ws');
 const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '../.env') });
+require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
